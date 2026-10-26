@@ -26,19 +26,13 @@
 
       /* Headings */
 
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
+      h1, h2, h3, h4, h5, h6 {
         line-height: 1.1;
         font-weight: 600;
         text-wrap: balance;
       }
 
-      h1,
-      h2 {
+      h1, h2 {
         border-bottom: 1px solid var(--color-neutral-80);
         padding-bottom: 0.2em;
       }
@@ -72,8 +66,7 @@
 
       /* Lists */
 
-      ul,
-      ol {
+      ul, ol {
         padding-inline-start: 2em;
       }
 
@@ -137,6 +130,12 @@
             );
           }
         }
+
+		img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
       }
     </style>
   </head>
@@ -148,50 +147,55 @@
         Persuasive or Deceptive Visualization?
       </h1>
 
-      <p><strong>Your Name</strong> — <em>Your UCSD Email Address</em></p>
+      <p><strong>Gloria Kao</strong> — <em>gkao@ucsd.edu</em></p>
     </header>
 
     <main>
-      <h2>Proposition: [STATE PROPOSITION]</h2>
+      <h2>Proposition: China is the most responsible country for the world's CO2 emissions.</h2>
 
       <section>
         <h3>FOR the Proposition</h3>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="img/for.png" alt="for" />
+          <figcaption>China is the most responsible country for the world's CO2 emissions, as it has the highest total emissions.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
+        <p>**Scoring scale: -2 is fully deceptive, 0 is neutral, and 2 is fully earnest.</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li><i>[Score: 2]</i> A bar chart is the most appropriate mark for categorical data because it does not suggest any trend. Rather than a color scale or circular areas, rectangular areas make it easy to compare values. </li>
+          <li><i>[Score: -2]</i> The data attribute used is the total CO2 emissions per country. Naturally, a highly populated country will emit more greenhouse gases because they consume more resources. This data is not transformed to make the countries' CO2 emissions more comparable on the basis of population. </li>
+          <li><i>[Score: 2]</i> The bars are sorted to help establish country rankings and illustrate again that China contributes the most to CO2 pollution.</li>
+          <li><i>[Score: 2]</i> The axes are not truncated and start at 0, so all bar sizes are proportional to each other and can be compared logically. </li>
         </ul>
       </section>
 
       <section>
         <h3>AGAINST the Proposition</h3>
+        <p>**Scoring scale: -2 is fully deceptive, 0 is neutral, and 2 is fully earnest.</p>
 
         <figure>
-          <img src="IMAGE_FILENAME" alt="" />
-          <figcaption>BRIEF CAPTION HERE.</figcaption>
+          <img src="img/against.png" alt="against" />
+          <figcaption>China is NOT the most responsible country for the world's CO2 emissions; Qatar is the most responsible, with the highest CO2 emissions per capita.</figcaption>
         </figure>
 
         <p>Design Decisions and Rationale:</p>
 
         <ul>
-          <li>RATIONALE_1</li>
-          <li>RATIONALE_2</li>
-          <li>RATIONALE_3</li>
+          <li><i>[Score: 2]</i> The mark is the same as the “for” design. A bar chart is the most appropriate mark for categorical data because it does not suggest any trend. Rather than a color scale or circular areas, rectangular areas make it easy to compare values. </li>
+          <li><i>[Score: 1]</i> The data attribute used is CO2 emissions in metric tons per capita. It is normalized by population, so a big country can be fairly compared to a small one. This changes the conclusion of the visualization a lot and completely changes the top 10 rankings. </li>
+          <li><i>[Score: 2]</i> The bars are sorted to help establish country rankings. This time, Qatar is the highest-ranked country in CO2 emissions. </li>
+          <li><i>[Score: 2]</i> The axes are not truncated and start at 0, so all bar sizes are proportional to each other and can be compared logically. </li>
         </ul>
       </section>
 
       <section>
         <h2>Final Reflection</h2>
 
-        <p>[WRITE FINAL REFLECTION PARAGRAPHS HERE.]</p>
+        <p>	I chose the same encodings for both visualizations, which produced visually similar plots, but I used different data transformations, and that led to drastically different plots and thus conflicting conclusions. I was surprised by the result of the “against” plot, because I assumed that although the top country might be different, it would still be one of the major countries (China, USA, India, etc.), but it turned out to be a small Middle Eastern country whose CO2 emissions per capita surpassed all other countries by more than twice. This showed the significance of choosing a different data attribute and why exploring and analyzing every column in a dataset is important. </p>
+        <p>I think not using deceptive techniques such as dual axes or disproportionate scaling is a given for all data visualization, as the resulting plot is not just misleading but incorrect and violates data visualization “rules”. Thus, I would define an analysis and visualization as ethical if the analyst explored the data thoroughly and chose what they believed to be the fairest data transformation that would not bias any particular subject or group. Of course, ineffective data visualization techniques such as truncation or using the inappropriate mark are still deceptive, but it can become more difficult to distinguish between truthful and misleading visualizations such as mine, which require more logical thinking about the data behind it and how it’s transformed to fit on the graph.</p>
       </section>
     </main>
   </body>
